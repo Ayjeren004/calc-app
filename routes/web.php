@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+use App\Http\Controllers\CurrencyConverterController;
+
+Route::get('/currency-converter', [CurrencyConverterController::class, 'showForm']);
+Route::post('/currency-converter', [CurrencyConverterController::class, 'convert']);
+
+
