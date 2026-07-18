@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CurrencyConverterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,13 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-use App\Http\Controllers\CurrencyConverterController;
-
+Route::get('/', [CurrencyConverterController::class, 'showForm']);
 Route::get('/currency-converter', [CurrencyConverterController::class, 'showForm']);
-Route::post('/currency-converter', [CurrencyConverterController::class, 'convert']);
+Route::get('/api/rates/{base}', [CurrencyConverterController::class, 'getRates']);
+
 
 

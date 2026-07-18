@@ -3,52 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Currency Converter</title>
-    <!-- Bootstrap CSS link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rBSKmYDk99WvlA2QMgcA5q1AAvqayzEUEwFvAx15XRt89+UQzzLX+OC79Be5z/DK2" crossorigin="anonymous">
-    <!-- Custom styles -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>ApexRate | Real-Time Currency Exchange Dashboard</title>
+    
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom Modern Premium CSS -->
     <style>
-        body {
-            background-image: url('your-background-image-url.jpg'); /* Replace with your background image URL */
-            background-size: cover;
-            color: #fff; /* Adjust text color for better visibility on the background */
-            font-family: 'Arial', sans-serif;
-            margin: 0; /* Remove default body margin */
-            height: 100vh; /* Set the body height to 100% of the viewport height */
-            overflow: hidden; /* Prevent horizontal scrollbar due to negative margins */
+        :root {
+            --bg-gradient: linear-gradient(135deg, #09090e 0%, #111122 100%);
+            --glass-bg: rgba(255, 255, 255, 0.04);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-focus-border: rgba(139, 92, 246, 0.4);
+            --accent-primary: #8b5cf6; /* Violet */
+            --accent-secondary: #06b6d4; /* Cyan */
+            --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
         }
 
-        .container {
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100%;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        .card {
+        /* Abstract ambient background glows */
+        .glow-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: 0;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        .glow-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent-primary);
+            top: -10%;
+            left: -10%;
+        }
+        .glow-2 {
+            width: 500px;
+            height: 500px;
+            background: var(--accent-secondary);
+            bottom: -15%;
+            right: -10%;
+        }
+
+        .container {
+            z-index: 1;
             width: 100%;
-            max-width: 400px;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for the card */
             padding: 20px;
-            border-radius: 10px;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
 <body>
-    @yield('content')
+    <!-- Decorative background glow animations -->
+    <div class="glow-circle glow-1"></div>
+    <div class="glow-circle glow-2"></div>
 
-    <!-- Bootstrap JS and Popper.js scripts (if needed) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyW+k9Lh5Jl+CD4BXcL8dgOFkww1bA2AId" crossorigin="anonymous"></script>
+    <div class="container">
+        @yield('content')
+    </div>
 </body>
 </html>
+
