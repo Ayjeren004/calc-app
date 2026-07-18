@@ -17,7 +17,11 @@ use App\Http\Controllers\CurrencyConverterController;
 
 Route::get('/', [CurrencyConverterController::class, 'showForm']);
 Route::get('/currency-converter', [CurrencyConverterController::class, 'showForm']);
+Route::post('/currency-converter', function () {
+    return redirect('/currency-converter');
+});
 Route::get('/api/rates/{base}', [CurrencyConverterController::class, 'getRates']);
+
 
 
 
