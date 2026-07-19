@@ -54,6 +54,7 @@
 
     .input-custom, .select-custom {
         width: 100%;
+        box-sizing: border-box; /* Prevents padding from causing width overflow */
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid var(--glass-border);
         border-radius: 12px;
