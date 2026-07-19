@@ -20,14 +20,14 @@
     <!-- Custom Modern Premium CSS -->
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #09090e 0%, #111122 100%);
-            --glass-bg: rgba(255, 255, 255, 0.04);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --glass-focus-border: rgba(139, 92, 246, 0.4);
-            --accent-primary: #8b5cf6; /* Violet */
-            --accent-secondary: #06b6d4; /* Cyan */
-            --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
-            --text-main: #f3f4f6;
+            --bg-gradient: linear-gradient(135deg, #07090e 0%, #0d111a 100%);
+            --glass-bg: rgba(15, 23, 42, 0.55);
+            --glass-border: rgba(255, 255, 255, 0.055);
+            --glass-focus-border: rgba(16, 185, 129, 0.4);
+            --accent-primary: #10b981; /* Premium Emerald */
+            --accent-secondary: #34d399; /* Soft Jade/Mint */
+            --accent-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --text-main: #f9fafb;
             --text-muted: #9ca3af;
         }
 

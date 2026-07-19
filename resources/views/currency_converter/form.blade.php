@@ -367,8 +367,8 @@
             
             // Create gradient fill
             const gradient = ctx.createLinearGradient(0, 0, 0, 100);
-            gradient.addColorStop(0, 'rgba(6, 182, 212, 0.3)');
-            gradient.addColorStop(1, 'rgba(6, 182, 212, 0.0)');
+            gradient.addColorStop(0, 'rgba(16, 185, 129, 0.25)');
+            gradient.addColorStop(1, 'rgba(16, 185, 129, 0.0)');
 
             if (chartInstance) {
                 chartInstance.destroy();
@@ -381,14 +381,14 @@
                     datasets: [{
                         label: `${base} to ${target} Rate`,
                         data: dataPoints,
-                        borderColor: '#06b6d4',
+                        borderColor: '#10b981',
                         borderWidth: 2,
                         backgroundColor: gradient,
                         fill: true,
                         tension: 0.4, // Curved lines
                         pointRadius: 3,
                         pointBackgroundColor: '#ffffff',
-                        pointBorderColor: '#06b6d4',
+                        pointBorderColor: '#10b981',
                         pointHoverRadius: 5
                     }]
                 },
