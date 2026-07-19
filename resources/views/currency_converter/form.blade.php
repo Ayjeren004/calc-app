@@ -140,6 +140,7 @@
         padding: 15px;
         margin-top: 25px;
         position: relative;
+        height: 180px; /* Fixed height to prevent infinite Chart.js resize loop */
     }
 
     .chart-header {
